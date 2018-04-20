@@ -5,7 +5,7 @@ import Main from './Main.jsx';
 
 
 const mapStateToProps = (state) => ({
-
+  wallet: state.wallet,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(actionCreators, dispatch);
