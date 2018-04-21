@@ -20,6 +20,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './client/dist'
+    contentBase: './client/dist',
+    "proxy": {
+      "/btcusd": {
+          "target": "http://localhost:3000"
+        },
+      secure: false
+    }
   }
 };
