@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import $ from 'jquery';
 
 class Quote extends React.Component {
   constructor(props) {
@@ -19,7 +18,6 @@ class Quote extends React.Component {
 
     axios.get('/btcusd')
       .then(function (response) {
-        console.log('dsadas')
         console.log(response.data);
       })
       .catch(function (error) {
@@ -32,6 +30,7 @@ class Quote extends React.Component {
     return (
       <div>
         <button onClick={this.clickHandler}>Trade</button>
+        <input type="text" name="btc" value="" placeholder ="Display Quote" readOnly/>
       </div>
     )
   }
