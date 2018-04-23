@@ -1,14 +1,4 @@
-const isValidDollarFigure = function (str) {
-  if (str.length === 0) return false;
-  const decimalIndex = str.indexOf('.');
-
-  if (decimalIndex != -1 && str.length - 1 - decimalIndex > 2) {
-    return false;
-  }
-
-  return !isNaN(str);
-};
-
+import { isValidDollarFigure, round } from '../helpers/helpers.js';
 
 const wallet = function (state = {}, action) {
   if (action.type !== 'PURCHASE_BTC' || !isValidDollarFigure(action.costInUSD)) {
@@ -16,13 +6,13 @@ const wallet = function (state = {}, action) {
   }
 
   const { btcToUsd, usdInWallet, btcInWallet } = action;
-  const costInUSD = Number(Number(action.costInUSD).toFixed(2));
+  const costInUSD = round(action.costInUSD, 2);
 
   if (costInUSD <= usdInWallet) {
 
     return {
-        usd: (usdInWallet - costInUSD),
-        btc: ((costInUSD / btcToUsd) + btcInWallet),
+        usd: round(usdInWallet - costInUSD, 2),
+        btc: round((costInUSD / btcToUsd) + btcInWallet, 8),
       };
   }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { round } from '../helpers/helpers.js';
 
 class Quote extends React.Component {
   constructor(props) {
@@ -45,12 +46,12 @@ class Quote extends React.Component {
             name="btc"
             value=""
             placeholder="Display Quote"
-            readOnly/>)}
+            readOnly />)}
           {(validNumberToBeTraded && btcToUsd) && (<input
             type="text"
             name="btc"
-            value={(Number(Number(usdToBeTraded).toFixed(2)) / btcToUsd).toFixed(8)}
-            readOnly/>)}
+            value={round(usdToBeTraded / btcToUsd, 8)}
+            readOnly />)}
         </div>
         <button onClick={this.clickHandler.bind(this)}>Trade</button>
       </div>
