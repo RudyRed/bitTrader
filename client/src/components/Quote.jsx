@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { round } from '../helpers/helpers.js';
+import { round, isValidDollarFigure } from '../helpers/helpers.js';
 
 class Quote extends React.Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class Quote extends React.Component {
 
 
   componentDidMount() {
-    console.log(this.props)
     this._fetchBtcPrice();
   }
 
@@ -36,18 +35,18 @@ class Quote extends React.Component {
   }
 
   render() {
-    const { validNumberToBeTraded, btcToUsd, usdToBeTraded } = this.props;
+    const { btcToUsd, usdToBeTraded } = this.props;
 
     return (
       <div>
         <div>
-          {(!validNumberToBeTraded || !btcToUsd) && (<input
+          {(!isValidDollarFigure(usdToBeTraded) || !btcToUsd) && (<input
             type="text"
             name="btc"
             value=""
             placeholder="Display Quote"
             readOnly />)}
-          {(validNumberToBeTraded && btcToUsd) && (<input
+          {(isValidDollarFigure(usdToBeTraded) && btcToUsd) && (<input
             type="text"
             name="btc"
             value={round(usdToBeTraded / btcToUsd, 8)}
