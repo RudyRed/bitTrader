@@ -16,13 +16,13 @@ const wallet = function (state = {}, action) {
   }
 
   const { btcToUsd, usdInWallet, btcInWallet } = action;
-  const costInUSD = Number.parseFloat(action.costInUSD).toFixed(2);
+  const costInUSD = Number(Number(action.costInUSD).toFixed(2));
 
   if (costInUSD <= usdInWallet) {
 
     return {
-        usd: Number.parseFloat(usdInWallet - costInUSD).toFixed(2),
-        btc: Number.parseFloat((costInUSD / btcToUsd) + btcInWallet).toFixed(8),
+        usd: (usdInWallet - costInUSD),
+        btc: ((costInUSD / btcToUsd) + btcInWallet),
       };
   }
 

@@ -30,8 +30,8 @@ class Quote extends React.Component {
 
 
   clickHandler(event) {
-
-
+    const { trade, usdToBeTraded, btcToUsd, wallet } = this.props;
+    trade(usdToBeTraded, btcToUsd, wallet.usd, wallet.btc);
   }
 
   render() {
@@ -40,7 +40,7 @@ class Quote extends React.Component {
         <div>
           <input type="text" name="btc" value="" placeholder ="Display Quote" readOnly/>
         </div>
-        <button onClick={this.clickHandler}>Trade</button>
+        <button onClick={this.clickHandler.bind(this)}>Trade</button>
       </div>
     )
   }

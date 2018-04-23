@@ -5,8 +5,8 @@ import TradeAmount from './TradeAmount.jsx';
 const Main = (store) => (
   <div>
     <h1>Account Balance</h1>
-    <p>{`USD: ${store.wallet.usd}`}</p>
-    <p>{`BTC: ${store.wallet.btc}`}</p>
+    <p>{`USD ${store.wallet.usd.toFixed(2)}`}</p>
+    <p>{`BTC ${store.wallet.btc.toFixed(8)}`}</p>
     <h1> Trade </h1>
     <input type="text" value="USD" readOnly/>
     <TradeAmount {...store} />
