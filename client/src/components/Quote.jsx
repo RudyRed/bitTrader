@@ -35,10 +35,22 @@ class Quote extends React.Component {
   }
 
   render() {
+    const { validNumberToBeTraded, btcToUsd, usdToBeTraded } = this.props;
+
     return (
       <div>
         <div>
-          <input type="text" name="btc" value="" placeholder ="Display Quote" readOnly/>
+          {(!validNumberToBeTraded || !btcToUsd) && (<input
+            type="text"
+            name="btc"
+            value=""
+            placeholder="Display Quote"
+            readOnly/>)}
+          {(validNumberToBeTraded && btcToUsd) && (<input
+            type="text"
+            name="btc"
+            value={(Number(Number(usdToBeTraded).toFixed(2)) / btcToUsd).toFixed(8)}
+            readOnly/>)}
         </div>
         <button onClick={this.clickHandler.bind(this)}>Trade</button>
       </div>

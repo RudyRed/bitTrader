@@ -9,6 +9,7 @@ const defaultState = {
   },
   btcToUsd: 0,
   usdToBeTraded: '',
+  validNumberToBeTraded: false,
 };
 
 const store = createStore(rootReducer, defaultState);

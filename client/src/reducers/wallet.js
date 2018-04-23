@@ -1,5 +1,5 @@
 const isValidDollarFigure = function (str) {
-
+  if (str.length === 0) return false;
   const decimalIndex = str.indexOf('.');
 
   if (decimalIndex != -1 && str.length - 1 - decimalIndex > 2) {
