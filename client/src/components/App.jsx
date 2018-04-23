@@ -6,6 +6,7 @@ import Main from './Main.jsx';
 
 const mapStateToProps = (state) => ({
   wallet: state.wallet,
+  usdToBeTraded: state.usdToBeTraded,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(actionCreators, dispatch);

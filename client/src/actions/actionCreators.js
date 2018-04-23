@@ -5,3 +5,8 @@ export const trade = (costInUSD, btcToUsd, usdInWallet, btcInWallet) => ({
   usdInWallet,
   btcInWallet,
 });
+
+export const usdTextInput = (costInUSD) => ({
+  type: 'INPUTED_USD',
+  costInUSD,
+});

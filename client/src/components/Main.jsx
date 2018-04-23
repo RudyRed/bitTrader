@@ -9,7 +9,7 @@ const Main = (store) => (
     <p>{`BTC: ${store.wallet.btc}`}</p>
     <h1> Trade </h1>
     <input type="text" value="USD" readOnly/>
-    <TradeAmount/>
+    <TradeAmount {...store} />
     <h1> For </h1>
     <input type="text" value="BTC" readOnly/>
     <Quote/>
