@@ -9,28 +9,38 @@ class Quote extends React.Component {
 
 
   componentDidMount() {
+    console.log(this.props)
+    this._fetchBtcPrice();
+  }
+
+  _fetchBtcPrice () {
+  const context = this;
+
+    axios.get('/btcusd')
+      .then(function (response) {
+        context.props.fetchBtcPrice(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setTimeout(context._fetchBtcPrice.bind(context), 3000);
+      });
+
 
   }
 
 
-
   clickHandler(event) {
 
-    axios.get('/btcusd')
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
 
   }
 
   render() {
     return (
       <div>
+        <div>
+          <input type="text" name="btc" value="" placeholder ="Display Quote" readOnly/>
+        </div>
         <button onClick={this.clickHandler}>Trade</button>
-        <input type="text" name="btc" value="" placeholder ="Display Quote" readOnly/>
       </div>
     )
   }

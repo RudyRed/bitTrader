@@ -10,3 +10,8 @@ export const usdTextInput = (costInUSD) => ({
   type: 'INPUTED_USD',
   costInUSD,
 });
+
+export const fetchBtcPrice = (btcPrice) => ({
+  type: 'FETCH_BTC_PRICE',
+  btcPrice,
+});

@@ -6,6 +6,7 @@ import Main from './Main.jsx';
 
 const mapStateToProps = (state) => ({
   wallet: state.wallet,
+  btcToUsd: state.btcToUsd,
   usdToBeTraded: state.usdToBeTraded,
 });
 

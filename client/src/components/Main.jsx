@@ -12,7 +12,7 @@ const Main = (store) => (
     <TradeAmount {...store} />
     <h1> For </h1>
     <input type="text" value="BTC" readOnly/>
-    <Quote/>
+    <Quote {...store} />
   </div>
 )
 
