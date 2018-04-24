@@ -1,0 +1,48 @@
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 30px;
+  padding-top:
+}
+
+input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0 8px 17px;
+  display: inline-block;
+  border: 2px solid #ada9a9;
+  border-radius: 4px;
+  width: 150px;
+}
+
+small {
+  color: red;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 10px;
+  padding-left: 12px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height:58px;
+  width:225px;
+}
+
+.wallet {
+  margin-left: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wallet-balance {
+  padding-left: 10px;
+}
+
+.currency {
+  font-size: 14px;
+}

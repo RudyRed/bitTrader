@@ -40,13 +40,13 @@ class Quote extends React.Component {
     return (
       <div>
         <div>
-          {(!isValidDollarFigure(usdToBeTraded) || !btcToUsd) && (<input
+          {(!isValidDollarFigure(usdToBeTraded) || btcToUsd == 0) && (<input
             type="text"
             name="btc"
             value=""
             placeholder="Display Quote"
             readOnly />)}
-          {(isValidDollarFigure(usdToBeTraded) && btcToUsd) && (<input
+          {(isValidDollarFigure(usdToBeTraded) && btcToUsd > 0) && (<input
             type="text"
             name="btc"
             value={round(usdToBeTraded / btcToUsd, 8)}

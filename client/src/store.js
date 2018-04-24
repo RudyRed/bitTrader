@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
 
 import rootReducer from './reducers/index';
+import { root } from './helpers/helpers.js';
 
 const defaultState = {
   wallet: {

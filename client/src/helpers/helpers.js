@@ -19,3 +19,13 @@ export const round = function (number, precision) {
   };
   return shift(Math.round(shift(number, precision, false)), precision, true);
 };
+
+export const toDecimalString = function (num, decimalPoints) {
+  num = num.toString();
+  const decimalIndex = num.indexOf('.');
+
+  return decimalIndex == -1
+    ? `${num}.${Array(decimalPoints + 1).join('0')}`
+    : `${num}${Array(decimalPoints + 1 - (num.length - decimalIndex - 1)).join('0')}`;
+
+};
